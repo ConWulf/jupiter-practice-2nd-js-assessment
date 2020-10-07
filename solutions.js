@@ -14,30 +14,115 @@
 
 //TODO: Define a function named isOdd that takes in any input and returns true if the input is an odd number, return false for any other situation. You do not need to consider floating-point and decimal numbers.
 
+function isOdd(num) {
+    if (!isNaN(num)) {
+        return  num % 2 !== 0;
+    } else {
+        return false;
+    }
+}
 
 //TODO: Define a function named isVowel that takes in a single character and returns true if the character is a vowel. *Not including the letter 'y'
+
+function isVowel(char) {
+    var str = char + ""
+    var vowel = ["a", "e", "i", "o", "u"];
+        if (vowel.indexOf(str.toLowerCase()) !== -1) {
+           return true;
+        } else {
+           return false;
+        }
+}
 
 
 //TODO: Define a function named combineStrings that takes in two parameters, if both parameters are strings, then return a concatenated string of both parameters. Otherwise, return false.
 
+function combineStrings(input1, input2) {
+    if (typeof input1 === "string" && typeof input2 === "string") {
+        return input1 + input2;
+    } else {
+        return false;
+    }
+}
+
 
 //TODO: Define a function named sumArgs that takes in three parameters, if they are numbers then add them together. Otherwise return false.
 
-
+function sumArgs(x, y, z) {
+    if (typeof x === "number" && typeof y === "number" && typeof z === "number") {
+        return x + y + z;
+    } else {
+        return false;
+    }
+}
 
 //TODO: Define a function named truncateString that takes in a string as the first parameter and a number as the second parameter. Truncate (shorten) the string by the length based on the argument passed in. For example, truncateString("hello world",1) would return "hello worl"
+
+function truncateString(str, num) {
+    if (num >= str.length) {
+        return "";
+    } else if (typeof str === "string" && typeof num === "number") {
+        return str.slice(0, str.length-num);
+    } else {
+        return false;
+    }
+}
 
 
 //TODO: Define a function named `reverseSign` that takes in a number as the first parameter. Reverse the sign of the argument passed in, return false if the argument is not a number. For example, `reverseSign(1)` would return `-1`.
 
+function reverseSign(num) {
+    if (num === "" || typeof num === "boolean" || typeof num === "object") {
+        return false;
+    } else if(!isNaN(num)) {
+        return num * -1;
+    } else {
+        return false;
+    }
+}
+
 
 //TODO: Define a function named `makeUppercase` that takes in a string as the first parameter. Return the argument passed in entirely uppercased, return false if the argument is not a string. For example, `makeUppercase("test")` would return `"TEST"`.
+
+function makeUppercase(str) {
+    if (typeof str === "string" && isNaN(str)) {
+        return str.toUpperCase();
+    } else {
+        return false;
+    }
+}
 
 
 //TODO: Define a function named `isMultiple` that takes in two `number` parameters. Return `true` if one argument is a multiple of the other, `false` otherwise. For example, `isMultiple(2, 6)` would return `true`.
 
+function isMultiple(x, y) {
+     if (x === y){
+        return false;
+    } else {
+         return x % y === 0 || y % x === 0;
+     }
+}
 
 //TODO: Define a function named `canPurchase` that takes in two `number` parameters, `billAmount` & `availableCash`. Return `true` if `availableCash` is greater than `billAmount`, `false` otherwise. For example, `canPurchase(10, 20)` would return `true`.
 
+function canPurchase(bill, cash) {
+    if(cash > bill) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 //TODO: Define a function named `getInitials` that takes in two `string` parameters, `first` & `last`. Return the names combined and formatted as initials, return `false` if either parameter is invalid. For example, `getInitials("John", "Snow")` would return `"J.S."`
+
+function getInitials(firstName, lastName) {
+    if (!isNaN(firstName) && !isNaN(lastName)) {
+        return false;
+    } else if (firstName === undefined || lastName === undefined) {
+        return false;
+    } else {
+        return truncateString(firstName, firstName.length - 1) + "." + truncateString(lastName, lastName.length - 1) + "."
+
+    }
+}
